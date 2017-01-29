@@ -19,6 +19,8 @@ var index = template.Must(template.ParseFiles(
 ))
 
 func helloworld(w http.ResponseWriter, req *http.Request) {
+  r.ParseForm()
+  log.Printf("r:" + r.Form)
   index.Execute(w, nil)
 }
 
